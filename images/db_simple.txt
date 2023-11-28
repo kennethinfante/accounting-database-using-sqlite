@@ -1,0 +1,70 @@
+@startuml
+' uncomment the line below if you're using computer with a retina display
+' skinparam dpi 300
+!define Table(name,desc) class name as "desc" << (T,#FFAAAA) >>
+!define Model(name,desc) class name as "desc" << (M,#FFAAAA) >>
+' we use bold for primary key
+' green color for unique
+' and underscore for not_null
+!define nn(x) <u>x</u>
+!define pk(x) <b>x</b>
+!define fk(x) <i>x</i>
+!define unique(x) <color:green>x</color>
+' other tags available:
+' <i></i>
+' <back:COLOR></color>, where color is a color name or html color code
+' (#FFAACC)
+' see: http://plantuml.com/classes.html#More
+hide methods
+hide stereotypes
+
+
+' entities
+' Sales Cycle
+
+Model(Customers, "Customers") {
+}
+
+Model(Invoices, "Invoices") {
+}
+
+Model(Accounts, "Accounts") {
+}
+
+Model(Invoice_Payments, "Invoice_Payments") {
+}
+
+
+' Purchases Cycle
+Model(Suppliers, "Suppliers") {
+}
+
+Model(Bills, "Bills") {
+}
+
+Model(Bill_Payments, "Bill_Payments") {
+}
+
+
+Model(Received_Moneys, "Received_Moneys") {
+}
+
+Model(Spent_Moneys, "Spent_Moneys") {
+}
+
+
+' relationships
+Customers "1" -- "M" Invoices
+Invoices "M" -- "M" Accounts
+Invoices "M" -- "1" Invoice_Payments
+
+Suppliers "1" -- "M" Bills
+Bills "M" -- "M" Accounts
+Bills "M" -- "1" Bill_Payments
+
+Customers "1" -- "M" Received_Moneys
+Received_Moneys "M" -- "M" Accounts
+
+Suppliers "1" -- "M" Spent_Moneys
+Spent_Moneys "M" -- "M" Accounts
+@enduml
