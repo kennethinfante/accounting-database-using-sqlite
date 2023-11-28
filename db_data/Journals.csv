@@ -1,0 +1,25 @@
+id,journal_no,tran_date,description,reference,line_account_id,line_amount
+1,1,2006-07-25,CE DispCost,,200,-60
+2,1,2006-07-25,OE DispCost,,190,-100
+3,1,2006-07-25,FF DispCost,,210,-100
+4,1,2006-07-25,Disposal Cost,,430,260
+5,1,2006-07-25,CE DispDeprn,,205,50
+6,1,2006-07-25,OE DispDeprn,,195,100
+7,1,2006-07-25,FF DispDeprn,,215,95
+8,1,2006-07-25,Disposal AD,,430,-245
+9,2,2006-07-25,CE DispDeprn,,205,-300
+10,2,2006-07-25,OE DispDeprn,,195,-400
+11,2,2006-07-25,FF DispDeprn,,215,-250
+12,2,2006-07-25,Deprn,,430,950
+13,3,2007-04-30,CE Deprn,,205,-200
+14,3,2007-04-30,OE Deprn,,195,-120
+15,3,2007-04-30,FF Deprn,,215,-55
+16,3,2007-04-30,Deprn,,660,375
+17,4,2007-06-26,CE DispCost,,200,-50
+18,4,2007-06-26,OE DispCost,,190,-100
+19,4,2007-06-26,FF DispCost,,210,-10
+20,4,2007-06-26,Disposal Cost,,660,160
+21,4,2007-06-26,CE DispDeprn,,205,20
+22,4,2007-06-26,OE DispDeprn,,195,55
+23,4,2007-06-26,FF DispDeprn,,215,5
+24,4,2007-06-26,Disposal AD,,660,-80

@@ -52,6 +52,8 @@ Model(Received_Moneys, "Received_Moneys") {
 Model(Spent_Moneys, "Spent_Moneys") {
 }
 
+Model(Journals, "Journals") {
+}
 
 ' relationships
 Customers "1" -- "M" Invoices
@@ -67,4 +69,5 @@ Received_Moneys "M" -- "M" Accounts
 
 Suppliers "1" -- "M" Spent_Moneys
 Spent_Moneys "M" -- "M" Accounts
+Accounts "1" -- "M" Journals
 @enduml

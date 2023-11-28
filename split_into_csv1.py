@@ -1,22 +1,17 @@
-from xlrd import open_workbook
-import csv
+import pandas as pd
+from pathlib import Path
+from shutil import rmtree
 
-wb = open_workbook('service_type_business.xlsx')
+db_files = "db_data"
 
-for i in range(0, wb.nsheets):
-    sheet = wb.sheet_by_index(i)
-    print(sheet.name)
-    # newline="" to remove blank lines
-    with open("db_data/%s.csv" %(sheet.name.replace(" ","")), "w", newline="") as file:
-        writer = csv.writer(file, delimiter = ",")
-        print(sheet, sheet.name, sheet.ncols, sheet.nrows)
+for path in Path(db_files).glob("**/*"):
+    if path.is_file():
+        path.unlink()
+    elif path.is_dir():
+        rmtree(path)
 
-        # do not include rows for command line import
-        # header = [cell.value for cell in sheet.row(0)]
-        # writer.writerow(header)
+data = pd.read_excel('service_type_business.xlsx', sheet_name=None)
 
-        for row_idx in range(0, sheet.nrows):
-            row = [int(cell.value) if isinstance(cell.value, float) else cell.value
-                   for cell in sheet.row(row_idx)]
-
-            writer.writerow(row)
+# loop through the dictionary and save csv
+for sheet_name, df in data.items():
+    df.to_csv(f'{db_files}/{sheet_name}.csv', index=False)

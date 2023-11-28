@@ -1,2 +1,2 @@
-id,tran_date,description,reference,total,coa_id
-1,39258,Purchase FA,,-1710,110
+id,tran_date,description,reference,total,account_id
+1,2007-06-25,Purchase FA,,-1710,110

@@ -47,3 +47,7 @@ venv
 __pycache__
 _config.py
 
+# Misc #
+######################
+accounting_db.db
+accounting_db2.db
